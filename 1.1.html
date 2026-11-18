@@ -66,6 +66,7 @@ function getAdaptiveNewPlan(){
      const missed=todays.filter(id=>!state.newDone[id]);
      queue.unshift(...missed);
    }
+  
  }
  return plan;
 }
