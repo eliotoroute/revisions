@@ -161,6 +161,18 @@ function render(){
  if(!adaptivePlan[day]){for(const [cid,doneOn] of Object.entries(state.newDone)){if(doneOn===day&&!newIds.includes(cid))newIds.push(cid)}}
  newIds.sort((a,b)=>a.slice(1)-b.slice(1));
  let oldIds=adaptiveOldPlan[day]||[],rems=reminderEntries(day);
+
+// Dernier jour ayant des cours prévus (nouveaux ou anciens)
+const lastPlannedDay=[...new Set([
+  ...Object.keys(adaptivePlan),
+  ...Object.keys(adaptiveOldPlan)
+])].filter(d=>
+  (adaptivePlan[d]||[]).length>0 ||
+  (adaptiveOldPlan[d]||[]).length>0
+).sort().pop() || START;
+
+// Limite la navigation au dernier jour utile
+$('day').max=lastPlannedDay;
  $('dayTitle').innerHTML='';$('dayTitle').append(el('div',{text:fmt(day).charAt(0).toUpperCase()+fmt(day).slice(1),style:'font-weight:750;font-size:18px;margin:0 0 8px'}));
  const isClosed=!!state.closedDays?.[day];
  $('closeDay').textContent=isClosed?'↶ Annuler la clôture':'✓ Journée terminée';$('closeDay').className=isClosed?'secondary':'';$('closeDay').disabled=day<START||day>END;
