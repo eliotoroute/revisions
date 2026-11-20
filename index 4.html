@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172554"><title>Révisions</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#172033;--muted:#667085;--line:#e6eaf1;--blue:#3157c8;--blue2:#eaf0ff;--green:#16845b;--greenbg:#e9f7f0;--orange:#a85b12;--orangebg:#fff3e5;--shadow:0 8px 26px #18264b0c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:900px;margin:auto;padding:22px 16px 60px}.hero{background:linear-gradient(135deg,#172554,#3157c8);color:#fff;border-radius:22px;padding:24px;box-shadow:var(--shadow)}.hero h1{margin:0 0 5px;font-size:26px}.hero p{margin:0;color:#dce5ff}.datebar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0}.datebar input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}button{font:inherit;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:white;cursor:pointer;font-weight:650}button.secondary{background:#eef1f7;color:#344054}button.small{padding:7px 10px;font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.stat .num{font-size:30px;font-weight:800;line-height:1.1}.stat .lab{color:var(--muted);font-size:13px;margin-top:6px}.stat.blue .num{color:var(--blue)}.stat.green .num{color:var(--green)}.stat.orange .num{color:var(--orange)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{margin:14px 0}.card h2{font-size:18px;margin:0 0 5px}.sub{color:var(--muted);font-size:13px;margin:0 0 14px}.course{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid var(--line)}.course:first-child{border-top:0}.course input[type=checkbox]{width:18px;height:18px;accent-color:var(--green);flex:none}.course input[type=text]{min-width:0;flex:1;border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}.course.done input[type=text]{color:#748094;text-decoration:line-through;background:#f8fafc}.tag{font-size:11px;padding:4px 7px;border-radius:99px;background:var(--blue2);color:var(--blue);white-space:nowrap}.tag.j7{background:var(--orangebg);color:var(--orange)}.tag.old{background:#f0efff;color:#5946a8}.empty{color:var(--muted);font-size:14px;padding:10px 0}.progress{height:8px;background:#edf0f5;border-radius:99px;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;background:var(--green);width:0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.closed-note{padding:10px 12px;border-radius:10px;background:var(--greenbg);color:#176347;font-size:13px;margin:8px 0 12px}.notice{padding:12px 14px;border-radius:12px;background:#eef4ff;color:#344a85;font-size:13px;margin:14px 0}.footer{color:var(--muted);font-size:12px;text-align:center;margin-top:24px}.hidden{display:none}.reminder{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid var(--line)}.reminder:first-child{border-top:0}.reminder input{margin-top:4px;width:18px;height:18px;accent-color:var(--green)}.reminder .meta{color:var(--muted);font-size:12px}.sectionhead{display:flex;justify-content:space-between;gap:10px;align-items:center}.pill{font-size:12px;color:var(--muted);background:#f2f4f7;border-radius:99px;padding:5px 9px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0}.tab{background:#eef1f7;color:#344054;padding:11px 8px;border-radius:10px;font-size:14px}.tab[aria-selected="true"]{background:var(--blue);color:#fff}.tabpanel{background:#f8faff;border:1px solid var(--line);border-radius:12px;padding:16px}.tabpanel h3{margin:0 0 8px;font-size:16px}.tabpanel ol{padding-left:21px;margin:8px 0}.tabpanel li{margin:7px 0}.backup{border-top:1px solid var(--line);margin-top:16px;padding-top:12px}.backup summary{cursor:pointer;color:var(--muted);font-size:13px;font-weight:650}.backup .actions{margin-top:10px}
+.grid.one{grid-template-columns:1fr}.settings{margin:14px 0}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}.fields label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}.fields input{font:inherit;padding:9px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:#fff}
+@media(max-width:640px){.stats{gap:7px}.stat{padding:12px}.stat .num{font-size:25px}.grid{grid-template-columns:1fr}.hero{padding:20px}.hero h1{font-size:23px}.wrap{padding:14px 12px 40px}}
+
+/* ===== Liquid glass ===== */
+:root{--glass:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.26));--glass-border:rgba(255,255,255,.7);--glass-shadow:0 10px 34px rgba(36,52,120,.14),0 2px 6px rgba(36,52,120,.06),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.3),inset 0 0 24px rgba(255,255,255,.22);--shadow:var(--glass-shadow)}
+html{background:#e9eefc}
+body{background:transparent;min-height:100vh}
+body::before,body::after{content:"";position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(60px);opacity:.75}
+body::before{width:62vmax;height:62vmax;left:-18vmax;top:-20vmax;background:radial-gradient(circle at 35% 35%,#7aa2ff,#a78bfa 55%,transparent 72%);animation:drift1 28s ease-in-out infinite alternate}
+body::after{width:56vmax;height:56vmax;right:-20vmax;bottom:-18vmax;background:radial-gradient(circle at 60% 55%,#5eead4,#60a5fa 50%,transparent 72%);animation:drift2 34s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(9vmax,7vmax) scale(1.08)}}
+@keyframes drift2{to{transform:translate(-8vmax,-6vmax) scale(1.1)}}
+.hero,.stat,.card,.datebar,.tab,button,.pill{-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
+.stat,.card{background:var(--glass);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow);border-radius:24px}
+.hero{background:linear-gradient(135deg,rgba(23,37,84,.80),rgba(49,87,200,.62));border:1px solid rgba(255,255,255,.35);border-radius:28px;box-shadow:0 14px 40px rgba(23,37,84,.28),inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 30px rgba(255,255,255,.08)}
+.datebar{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:10px 12px;box-shadow:var(--glass-shadow)}
+.datebar input,.course input[type=text]{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 2px rgba(36,52,120,.08);border-radius:12px;transition:box-shadow .2s,background .2s}
+.datebar input:focus,.course input[type=text]:focus{outline:none;background:rgba(255,255,255,.8);box-shadow:0 0 0 3px rgba(49,87,200,.25),inset 0 1px 2px rgba(36,52,120,.06)}
+.course.done input[type=text]{background:rgba(255,255,255,.3);color:#748094}
+.course,.reminder{border-top:1px solid rgba(255,255,255,.55)}
+.course:first-child,.reminder:first-child{border-top:0}
+button{background:linear-gradient(180deg,rgba(76,116,226,.95),rgba(49,87,200,.88));border:1px solid rgba(255,255,255,.45);border-radius:14px;box-shadow:0 6px 16px rgba(49,87,200,.28),inset 0 1.5px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.06);transition:transform .15s ease,box-shadow .2s ease,filter .2s ease}
+button.secondary,.tab{background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.34));color:#2b3a5c;border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 14px rgba(36,52,120,.10),inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.3)}
+.tab[aria-selected="true"]{background:linear-gradient(180deg,rgba(76,116,226,.95),rgba(49,87,200,.88));color:#fff;border-color:rgba(255,255,255,.45);box-shadow:0 6px 16px rgba(49,87,200,.28),inset 0 1.5px 0 rgba(255,255,255,.55)}
+button:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.04)}
+button:active:not(:disabled){transform:translateY(0) scale(.97)}
+button:disabled{opacity:.5;cursor:default}
+.tabpanel{background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.7);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
+.notice{background:rgba(220,232,255,.5);border:1px solid rgba(255,255,255,.7);border-radius:14px}
+.closed-note{background:rgba(214,246,230,.6);border:1px solid rgba(255,255,255,.7);border-radius:14px}
+.tag{background:rgba(234,240,255,.7);border:1px solid rgba(255,255,255,.8)}
+.tag.j7{background:rgba(255,236,214,.8)}
+.tag.old{background:rgba(240,238,255,.8)}
+.pill{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8)}
+.progress{background:rgba(255,255,255,.5);box-shadow:inset 0 1px 3px rgba(36,52,120,.12)}
+.progress span{background:linear-gradient(90deg,#34d399,#16845b);border-radius:99px;transition:width .4s ease}
+.backup{border-top:1px solid rgba(255,255,255,.6)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.stat,.card,.datebar{background:rgba(255,255,255,.9)}.hero{background:linear-gradient(135deg,#172554,#3157c8)}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}button{transition:none}}
+@media(max-width:640px){body::before,body::after{filter:blur(44px)}.datebar{padding:8px 10px}}
+
+/* ===== Tuile « Ma journée » ===== */
+.datebar{display:block;padding:14px;gap:0}
+.dayrow{display:flex;align-items:center;gap:10px}
+.datebar button.nav{width:46px;height:46px;padding:0;font-size:26px;line-height:1;flex:none;border-radius:50%}
+.datebar .daypick{position:relative;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 8px;border-radius:16px;text-align:center;cursor:pointer;transition:background .2s}
+.datebar .daypick:hover{background:rgba(255,255,255,.4)}
+.datebar .daypick:focus-within{box-shadow:0 0 0 3px rgba(49,87,200,.25)}
+#dayTitle{font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.01em}
+#dayMeta{font-size:12.5px;color:var(--muted)}
+.datebar .daypick input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;padding:0;border:0;background:transparent;box-shadow:none}
+.pills{margin-top:12px;display:flex;justify-content:center}
+.lpill{display:flex;justify-content:center;align-items:baseline;gap:8px;flex-wrap:wrap;padding:8px 16px;border-radius:99px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 3px 10px rgba(36,52,120,.07)}
+.lpill .lab{font-size:13px;color:var(--muted)}
+.lpill .date{font-weight:750;font-size:15px}
+.dayactions{display:flex;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.6)}
+.dayactions #closeDay{flex:1}
+@media(max-width:640px){.datebar{padding:12px}#dayTitle{font-size:18px}.pills{display:block}.lpill{border-radius:18px}}
+
+</style></head>
+<body><main class="wrap">
+<header class="hero"><h1>📚 Révisions</h1><p>Tu ouvres, tu regardes, tu travailles. Le planning fait les calculs.</p></header>
+<section class="datebar" id="datebar">
+ <div class="dayrow">
+  <button class="secondary nav" id="prev" aria-label="Jour précédent">‹</button>
+  <label class="daypick" for="day"><span id="dayTitle"></span><span id="dayMeta"></span><input id="day" type="date" min="2026-11-17" max="2026-12-15" aria-label="Choisir une date"></label>
+  <button class="secondary nav" id="next" aria-label="Jour suivant">›</button>
+ </div>
+ <div class="pills" id="pills"></div>
+ <div class="dayactions"><button id="closeDay">✓ Terminer la journée</button><button class="secondary" id="today">Aujourd'hui</button></div>
+</section>
+<div class="notice hidden" id="noTask">Rien de prévu ce jour : profites-en pour souffler.</div>
+<section class="stats" id="stats">
+ <div class="stat blue" id="newStat"><div class="num" id="newCount">0</div><div class="lab">nouveaux cours prévus</div></div>
+ <div class="stat" id="oldStat"><div class="num" id="oldCount">0</div><div class="lab">anciens cours à revoir</div></div>
+ <div class="stat orange" id="remStat"><div class="num" id="remCount">0</div><div class="lab">rappels à faire</div></div>
+</section>
+<div class="grid" id="mainGrid">
+ <section class="card" id="newCard"><div class="sectionhead"><h2>🆕 Nouveaux cours</h2><span class="pill" id="newDone">0/0 fait</span></div><p class="sub">Après avoir étudié un cours, renseigne son nom et coche « fait ». Ses rappels J+1 et J+7 seront créés automatiquement.</p><div id="newList"></div><div class="progress"><span id="newProgress"></span></div></section>
+ <section class="card" id="oldCard"><div class="sectionhead"><h2>📖 Anciens cours</h2><span class="pill" id="oldDone">0/0 fait</span></div><p class="sub">Tes cours déjà lus, répartis sur les matinées prévues. Coche-les simplement après révision.</p><div id="oldList"></div><div class="progress"><span id="oldProgress"></span></div></section>
+</div>
+<section class="card" id="remCard"><div class="sectionhead"><h2>🔁 Rappels du jour</h2><span class="pill" id="remDone">0/0 fait</span></div><p class="sub">Les rappels apparaissent automatiquement à partir de la date à laquelle tu as coché un nouveau cours comme terminé. Un rappel qui tombe un dimanche matin est décalé au lundi.</p><div id="remList"></div><div class="progress"><span id="remProgress"></span></div></section>
+<section class="card"><h2>🧭 Les étapes de travail</h2><p class="sub">Choisis un onglet pour retrouver exactement comment travailler chaque type de session.</p>
+<div class="tabs" id="tabsBar" role="tablist" aria-label="Étapes de travail">
+ <button class="tab" id="tab-new" role="tab" aria-selected="true" aria-controls="panel-new">1. Nouveaux</button>
+ <button class="tab" id="tab-old" role="tab" aria-selected="false" aria-controls="panel-old">2. Anciens</button>
+ <button class="tab" id="tab-rem" role="tab" aria-selected="false" aria-controls="panel-rem">3. Rappels</button>
+</div>
+<div class="tabpanel" id="panel-new" role="tabpanel" aria-labelledby="tab-new"><h3>🆕 Découvrir un nouveau cours · 45 min</h3><ol><li><strong>5 min · Aperçu :</strong> parcours les objectifs, le plan et les grandes parties du PDF. Repère la structure générale sans entrer dans les détails.</li><li><strong>25 min · Lecture active :</strong> lis directement le PDF en cherchant à comprendre. Fais des liens entre les notions et surligne avec parcimonie. Pas de fiche ni de questions à fabriquer.</li><li><strong>10 min · Rappel par les titres :</strong> reviens au début ou parcours les titres et sous-titres. À chaque partie, arrête-toi quelques secondes et essaie de retrouver mentalement les idées essentielles avant de relire le passage.</li><li><strong>5 min · Vérification :</strong> repère les passages où tu as eu des trous, rouvre-les et corrige rapidement. Marque mentalement les notions encore fragiles.</li></ol><p><strong>Quand c'est terminé :</strong> renseigne le nom du cours dans la liste du jour, puis coche-le. Les rappels J+1 et J+7 seront créés automatiquement.</p><div class="notice"><strong>Le réflexe :</strong> voir le titre → cacher ou ne pas regarder le texte → retrouver l'idée → vérifier dans le PDF. Tu n'as pas à reconstruire tout le plan ni à réciter les 60 pages.</div></div>
+<div class="tabpanel hidden" id="panel-old" role="tabpanel" aria-labelledby="tab-old"><h3>📖 Revoir un ancien cours · 10 à 15 min</h3><ol><li><strong>Plan :</strong> ouvre le PDF et parcours rapidement le plan pour réactiver la structure.</li><li><strong>Rappel actif :</strong> avance titre par titre. Avant de lire chaque partie, essaie de retrouver mentalement ce qu'elle contient et ses notions importantes.</li><li><strong>Vérification :</strong> affiche le texte et vérifie tout de suite ce que tu as retrouvé ou oublié.</li><li><strong>Correction ciblée :</strong> relis seulement les passages oubliés ou confondus, en donnant la priorité aux tableaux, classifications, encadrés et conduites à tenir.</li></ol><p><strong>À retenir :</strong> reste dans le PDF du début à la fin. Pas de feuille blanche, pas de fiche, pas de relecture intégrale. Si le cours est dense, privilégie les notions importantes plutôt que de vouloir parcourir chaque page.</p></div>
+<div class="tabpanel hidden" id="panel-rem" role="tabpanel" aria-labelledby="tab-rem"><h3>🔁 Faire un rappel directement sur le PDF</h3><h4 style="margin:12px 0 5px">J+1 · 5 à 7 min</h4><ol><li>Ouvre le PDF et parcours les titres et sous-titres.</li><li>À chaque titre, essaie de retrouver mentalement les informations essentielles avant de regarder le texte.</li><li>Vérifie rapidement dans le PDF et repère les oublis.</li><li>Ne relis que les passages qui ne reviennent pas.</li></ol><h4 style="margin:14px 0 5px">J+7 · 10 à 15 min</h4><ol><li>Refais le parcours actif des titres, sans lire immédiatement le contenu.</li><li>Vérifie les notions essentielles dans le PDF.</li><li>Insiste sur les tableaux, classifications, encadrés, critères diagnostiques, examens et prises en charge.</li><li>Relis de façon ciblée les éléments oubliés ou encore confus.</li></ol><div class="notice"><strong>La règle unique :</strong> voir le titre → essayer de retrouver → vérifier dans le PDF. Aucun QCM, aucune question à créer, aucune fiche à fabriquer : toute la session se fait sur ton PDF.</div><p><strong>Si le rappel tombe un dimanche matin :</strong> il est reporté au lundi.</p></div>
+<details class="backup"><summary>⚙️ Sauvegarde</summary><p class="sub"><strong id="saveStatus">Sauvegarde automatique activée.</strong> Chaque changement est enregistré automatiquement dans ce navigateur.</p><div class="actions"><button id="export">Exporter ma sauvegarde</button><button class="secondary" id="importBtn">Importer une sauvegarde</button><input class="hidden" id="importFile" type="file" accept="application/json"><button class="secondary" id="reset">Réinitialiser le planning</button></div><div class="notice">Les données sont sauvegardées sur cet appareil et dans ce navigateur. Elles ne se synchronisent pas automatiquement avec tes autres appareils : utilise l'export pour conserver une copie.</div></details></section>
+<div class="footer" id="footer"></div>
+</main>
+<script>
+(()=>{
+let START,END,NEW_TOTAL,OLD_TOTAL,MAXD,NEW_LAST,OLD_PER;
+const DEF={start:'2026-11-17',end:'2026-12-15',newTotal:83,oldTotal:44,maxPerDay:4};
+const $=id=>document.getElementById(id);
+const dateAdd=(s,n)=>{let d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)};
+const iso=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+const dateObj=s=>new Date(s+'T12:00:00');
+const fmt=s=>dateObj(s).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+const sunday=s=>dateObj(s).getDay()===0;
+const shiftSunday=s=>sunday(s)?dateAdd(s,1):s;
+const key='ednDashboard2026_v1';
+let state={newNames:{},newDone:{},oldNames:{},oldDone:{},remDone:{},closedDays:{},settings:{}};
+try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(saved)state={...state,...saved}}catch(e){}
+// Migration des anciennes validations : format ancien A1_2026-11-17 vers A1.
+for(const [k,v] of Object.entries(state.oldDone||{})){
+ const m=k.match(/^(A\d+)_\d{4}-\d{2}-\d{2}$/);
+ if(m){if(v)state.oldDone[m[1]]=true;delete state.oldDone[k];}
+}
+const save=()=>{try{localStorage.setItem(key,JSON.stringify(state));$('saveStatus').textContent='✓ Sauvegardé automatiquement';}catch(e){$('saveStatus').textContent='Sauvegarde impossible : exporte tes données.';}};
+const selected=()=>$('day').value;
+const okDate=x=>/^\d{4}-\d{2}-\d{2}$/.test(x||'');
+const shortD=d=>dateObj(d).toLocaleDateString('fr-FR',{day:'numeric',month:'long'});
+function calc(s){
+ let last=dateAdd(s.end,-7);while(last>s.start&&shiftSunday(dateAdd(last,7))>s.end)last=dateAdd(last,-1);
+ let days=0,nsd=0;for(let d=s.start;d<=last;d=dateAdd(d,1)){days++;if(!sunday(d))nsd++}
+ return {last,days,newPer:days?Math.ceil(s.newTotal/days):0,oldPer:s.oldTotal>0?Math.ceil(s.oldTotal/Math.max(1,nsd)):0};
+}
+function applySettings(){
+ let s={...DEF,...(state.settings||{})};
+ if(!okDate(s.start)||!okDate(s.end)||s.end<=s.start)s={...DEF};
+ START=s.start;END=s.end;NEW_TOTAL=Math.max(0,parseInt(s.newTotal,10)||0);OLD_TOTAL=Math.max(0,parseInt(s.oldTotal,10)||0);MAXD=Math.max(1,parseInt(s.maxPerDay,10)||4);
+ const c=calc({start:START,end:END,newTotal:NEW_TOTAL,oldTotal:OLD_TOTAL});NEW_LAST=c.last;OLD_PER=c.oldPer;
+ const di=$('day');di.min=START;di.max=END;
+ if(!di.value||di.value<START||di.value>END){const n=iso(new Date());di.value=n<START?START:n>END?END:n}
+ const long=d=>dateObj(d).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+ $('footer').textContent='Planning du '+long(START)+' au '+long(END)+' · '+NEW_TOTAL+' nouveaux cours · '+OLD_TOTAL+' anciens cours · Rappels J+1 et J+7';
+}
+function adaptTabs(){
+ const cfg=[['tab-new','panel-new',NEW_TOTAL>0],['tab-old','panel-old',OLD_TOTAL>0],['tab-rem','panel-rem',NEW_TOTAL>0]];
+ cfg.forEach(([t,p,v])=>$(t).classList.toggle('hidden',!v));
+ $('tabsBar').style.gridTemplateColumns='repeat('+Math.max(1,cfg.filter(c=>c[2]).length)+',1fr)';
+ const cur=cfg.find(c=>$(c[0]).getAttribute('aria-selected')==='true');
+ if(!cur||!cur[2]){const f=cfg.find(c=>c[2]);if(f)$(f[0]).click()}
+}
+const allNew=()=>Array.from({length:NEW_TOTAL},(_,i)=>'N'+(i+1));
+function onlyOnDoneDay(plan,done){for(const d of Object.keys(plan))plan[d]=plan[d].filter(id=>typeof done[id]!=='string'||done[id]===d);return plan}
+function getAdaptiveNewPlan(st=state){
+ const plan={};let queue=allNew().slice();
+ // Cours cochés, regroupés par jour où ils ont été faits
+ const doneOnDay={};
+ for(const [id,d] of Object.entries(st.newDone)){if(typeof d==='string')(doneOnDay[d]=doneOnDay[d]||[]).push(id)}
+ for(let day=START;day<=END;day=dateAdd(day,1)){
+  // Un cours fait ce jour-là compte dans les 4 du jour, même s'il était prévu un autre jour :
+  // il prend la place d'un cours non fait, qui est repoussé aux jours suivants.
+  const doneToday=doneOnDay[day]||[];
+  queue=queue.filter(id=>!doneToday.includes(id));
+  const todays=doneToday.concat(queue.splice(0,Math.max(0,MAXD-doneToday.length)));plan[day]=todays;
+  if(st.closedDays?.[day]){const missed=todays.filter(id=>!st.newDone[id]);queue.unshift(...missed);}
+ }
+ return onlyOnDoneDay(plan,st.newDone);
+}
+// Les anciens cours suivent aussi les journées clôturées.
+// Les validations restent attachées au cours lorsqu'il change de date.
+function getAdaptiveOldPlan(st=state){
+ const plan={};let queue=Array.from({length:OLD_TOTAL},(_,i)=>'A'+(i+1));
+ // Même logique que les nouveaux cours : un ancien cours coché un jour compte dans ce jour-là.
+ const doneOnDay={};
+ for(const [id,d] of Object.entries(st.oldDone)){if(typeof d==='string')(doneOnDay[d]=doneOnDay[d]||[]).push(id)}
+ for(let day=START;day<=END;day=dateAdd(day,1)){
+  const doneToday=doneOnDay[day]||[];
+  queue=queue.filter(id=>!doneToday.includes(id));
+  const cap=sunday(day)?0:OLD_PER;
+  const todays=doneToday.concat(queue.splice(0,Math.max(0,cap-doneToday.length)));plan[day]=todays;
+  if(st.closedDays?.[day]){const missed=todays.filter(id=>!st.oldDone[id]);queue.unshift(...missed);}
+ }
+ return onlyOnDoneDay(plan,st.oldDone);
+}
+function reminderEntries(day){let out=[];for(const [course,completedOn] of Object.entries(state.newDone)){if(!completedOn)continue;for(const [gap,label] of [[1,'J+1'],[7,'J+7']]){let due=shiftSunday(dateAdd(completedOn,gap));if(due===day)out.push({id:course+'_'+label+'_'+due,course,label,due,completedOn})}}return out.sort((a,b)=>a.course.localeCompare(b.course,undefined,{numeric:true}));}
+function el(tag,attrs={},children=[]){let x=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>{if(k==='class')x.className=v;else if(k==='text')x.textContent=v;else x.setAttribute(k,v)});children.forEach(c=>x.append(c));return x}
+const diffDays=(a,b)=>Math.round((dateObj(b)-dateObj(a))/864e5);
+const shortDate=d=>dateObj(d).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+// Dernier jour portant un cours prévu (projeté après la fin si le planning déborde).
+function lastPlanned(plan,total,cap,skipSun){
+ let last=null;const seen=new Set();
+ for(const d of Object.keys(plan)){if(plan[d].length)last=d;plan[d].forEach(id=>seen.add(id))}
+ const left=Math.max(0,total-seen.size);
+ let overflow=false;
+ if(left>0&&cap>0){overflow=true;let d=END,n=left;while(n>0){d=dateAdd(d,1);if(skipSun&&sunday(d))continue;n-=cap;}last=d}
+ return {last,overflow};
+}
+function renderPills(newPlan,oldPlan){
+ const box=$('pills');box.innerHTML='';
+ const cands=[];
+ if(NEW_TOTAL>0)cands.push(lastPlanned(newPlan,NEW_TOTAL,MAXD,false));
+ if(OLD_TOTAL>0)cands.push(lastPlanned(oldPlan,OLD_TOTAL,OLD_PER,true));
+ const best=cands.filter(c=>c.last).sort((x,y)=>y.last.localeCompare(x.last))[0];
+ box.append(el('div',{class:'lpill'},[el('span',{class:'lab',text:'Dernier cours prévu'}),el('span',{class:'date',text:best?shortDate(best.last)+(best.overflow?' (hors planning)':''):'Plus aucun cours prévu'})]));
+}
+function render(){
+ let day=selected();if(!day)return;
+ const adaptivePlan=getAdaptiveNewPlan(),adaptiveOldPlan=getAdaptiveOldPlan();
+ let newIds=(adaptivePlan[day]||[]).slice();
+ if(!adaptivePlan[day]){for(const [cid,doneOn] of Object.entries(state.newDone)){if(doneOn===day&&!newIds.includes(cid))newIds.push(cid)}}
+ newIds.sort((a,b)=>a.slice(1)-b.slice(1));
+ let oldIds=adaptiveOldPlan[day]||[],rems=reminderEntries(day);
+ $('dayTitle').textContent=fmt(day).charAt(0).toUpperCase()+fmt(day).slice(1);
+ $('dayMeta').textContent='Jour '+(diffDays(START,day)+1)+' sur '+(diffDays(START,END)+1)+' ▾';
+ renderPills(adaptivePlan,adaptiveOldPlan);
+ const isClosed=!!state.closedDays?.[day];
+ $('closeDay').textContent=isClosed?'↶ Annuler':'✓ Terminer la journée';$('closeDay').className=isClosed?'secondary':'';$('closeDay').disabled=day<START||day>END;
+ let closedNote=$('closedNote');if(closedNote)closedNote.remove();
+  $('newCount').textContent=newIds.length;$('oldCount').textContent=oldIds.length;$('remCount').textContent=rems.length;
+ const showNew=newIds.length>0,showOld=oldIds.length>0,showRem=NEW_TOTAL>0;
+ [['newCard',showNew],['oldCard',showOld],['remCard',showRem],['newStat',showNew],['oldStat',showOld],['remStat',showRem]].forEach(([id,v])=>$(id).classList.toggle('hidden',!v));
+ $('stats').style.gridTemplateColumns='repeat('+Math.max(1,[showNew,showOld,showRem].filter(Boolean).length)+',1fr)';
+ $('mainGrid').classList.toggle('one',!(showNew&&showOld));
+ $('noTask').classList.toggle('hidden',showNew||showOld||(showRem&&rems.length>0));
+ const nl=$('newList');nl.innerHTML='';
+ if(!newIds.length)nl.append(el('div',{class:'empty',text:'Pas de nouveau cours prévu ce jour.'}));
+ newIds.forEach(id=>{
+  let row=el('div',{class:'course'+(!!state.newDone[id]?' done':'')});
+  let cb=el('input',{type:'checkbox'});cb.checked=!!state.newDone[id];cb.disabled=isClosed;
+  let inp=el('input',{type:'text',placeholder:'Renseigne le nom de '+id,value:state.newNames[id]||''});inp.disabled=isClosed;
+  inp.addEventListener('input',()=>{state.newNames[id]=inp.value;save()});
+  cb.addEventListener('change',()=>{if(cb.checked&&!((state.newNames[id]||'').trim())){cb.checked=false;alert('Renseigne le nom du cours avant de le valider.');return}if(cb.checked)state.newDone[id]=selected();else delete state.newDone[id];save();render()});
+  row.append(cb,inp,el('span',{class:'tag',text:id}));
+  const doneOn=state.newDone[id];
+  if(typeof doneOn==='string'&&doneOn!==day)row.append(el('span',{class:'tag old',text:'fait le '+dateObj(doneOn).toLocaleDateString('fr-FR',{day:'numeric',month:'short'})}));
+  nl.append(row);
+ });
+ let nd=newIds.filter(id=>!!state.newDone[id]).length;$('newDone').textContent=nd+'/'+newIds.length+' fait';$('newProgress').style.width=(newIds.length?nd/newIds.length*100:0)+'%';
+ const ol=$('oldList');ol.innerHTML='';
+ if(!oldIds.length)ol.append(el('div',{class:'empty',text:'Aucun ancien cours programmé ce jour.'}));
+ oldIds.forEach(id=>{
+  let row=el('div',{class:'course'+(state.oldDone[id]?' done':'')});
+  let cb=el('input',{type:'checkbox'});cb.checked=!!state.oldDone[id];cb.disabled=isClosed;
+  cb.addEventListener('change',()=>{if(cb.checked)state.oldDone[id]=selected();else delete state.oldDone[id];save();render()});
+  row.append(cb,el('span',{text:state.oldNames[id]||'Ancien cours '+id.slice(1),style:'flex:1'}));const oDoneOn=state.oldDone[id];if(typeof oDoneOn==='string'&&oDoneOn!==day)row.append(el('span',{class:'tag old',text:'fait le '+dateObj(oDoneOn).toLocaleDateString('fr-FR',{day:'numeric',month:'short'})}));ol.append(row);
+ });
+ let od=oldIds.filter(id=>state.oldDone[id]).length;$('oldDone').textContent=od+'/'+oldIds.length+' fait';$('oldProgress').style.width=(oldIds.length?od/oldIds.length*100:0)+'%';
+ const rl=$('remList');rl.innerHTML='';
+ if(!rems.length)rl.append(el('div',{class:'empty',text:'Aucun rappel programmé pour cette journée. Dès que tu valides un nouveau cours, ses rappels apparaîtront ici.'}));
+ rems.forEach(r=>{
+  let row=el('div',{class:'reminder'}),cb=el('input',{type:'checkbox'});cb.checked=!!state.remDone[r.id];
+  cb.addEventListener('change',()=>{state.remDone[r.id]=cb.checked;save();render()});
+  let body=el('div');body.append(el('div',{text:state.newNames[r.course]||r.course,style:'font-weight:650'}),el('div',{class:'meta',text:r.label+' · découvert le '+fmt(r.completedOn)}));
+  row.append(cb,body,el('span',{class:'tag'+(r.label==='J+7'?' j7':''),text:r.label}));rl.append(row);
+ });
+ let rd=rems.filter(r=>state.remDone[r.id]).length;$('remDone').textContent=rd+'/'+rems.length+' fait';$('remProgress').style.width=(rems.length?rd/rems.length*100:0)+'%';
+}
+$('closeDay').addEventListener('click',()=>{
+ const day=selected();
+ if(state.closedDays?.[day]){delete state.closedDays[day];}
+ else{state.closedDays=state.closedDays||{};state.closedDays[day]=true;}
+ save();render();
+});
+applySettings();
+const todayIso=iso(new Date());$('day').value=todayIso<START?START:todayIso>END?END:todayIso;
+$('day').addEventListener('change',render);
+$('day').addEventListener('click',()=>{try{$('day').showPicker()}catch(e){}});
+$('today').onclick=()=>{let now=iso(new Date());$('day').value=now<START?START:now>END?END:now;render()};
+$('prev').onclick=()=>{let x=dateAdd(selected(),-1);if(x>=START)$('day').value=x;render()};
+$('next').onclick=()=>{let x=dateAdd(selected(),1);if(x<=END)$('day').value=x;render()};
+$('export').onclick=async()=>{const json=JSON.stringify({version:1,state},null,2);let dl=null;try{if(typeof claude!=='undefined')dl=await claude.use('downloads')}catch(e){}
+ if(dl){try{await dl.save({filename:'sauvegarde-planning-edn.json',data:json})}catch(e){if(e&&e.code!=='declined')alert('Export impossible ici.')}return}
+ let blob=new Blob([json],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sauvegarde-planning-edn.json';a.click();URL.revokeObjectURL(a.href)};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let data=JSON.parse(await f.text());if(!data.state)throw new Error();state={...state,...data.state};save();applySettings();adaptTabs();render();alert('Sauvegarde importée !')}catch(err){alert('Fichier de sauvegarde invalide.')}e.target.value=''};
+$('reset').onclick=()=>{if(confirm('Effacer les noms, les validations et les rappels enregistrés ? Cette action est irréversible sans sauvegarde.')){state={newNames:{},newDone:{},oldNames:{},oldDone:{},remDone:{},closedDays:{},settings:state.settings||{}};save();render()}};
+const tabs=[['tab-new','panel-new'],['tab-old','panel-old'],['tab-rem','panel-rem']];
+tabs.forEach(([tabId,panelId])=>{$(tabId).addEventListener('click',()=>{tabs.forEach(([t,p])=>{$(t).setAttribute('aria-selected',t===tabId?'true':'false');$(p).classList.toggle('hidden',p!==panelId)});});});
+adaptTabs();
+render();
+})();
+</script></body></html>
